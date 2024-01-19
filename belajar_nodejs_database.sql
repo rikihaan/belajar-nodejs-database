@@ -31,3 +31,13 @@ INSERT into products (id,name,price,stock,category) VALUES
 ("P005","E",5000,500,"K2");
 
 SELECT * FROM products;
+
+
+create table wallet (
+    id VARCHAR(100) not null,
+    balance int not null,
+    custumer_id VARCHAR(100) not null,
+    primary key(id),
+    constraint wallet_custumer_id_fk Foreign Key (custumer_id) REFERENCES custumers(id),
+    constraint wallet_custumer_id_unique unique (custumer_id)
+)engine innoDB;
